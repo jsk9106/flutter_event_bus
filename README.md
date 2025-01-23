@@ -44,12 +44,19 @@ Flutter 에서 이벤트 버스는 컴포넌트 간의 통신을 위해 사용�
 _예시) MVC_
 
 MVC 그룹 하나는 문제가 되지 않는다.
+
 ![](https://velog.velcdn.com/images/developer_noah/post/fa8eb47b-0fe1-4943-afe7-799cf67c7b7e/image.png)
 
+
+
 하지만 MVC 그룹이 여러 개 생기면 그 그룹들이 서로 통신해야 하는 상황이 생긴다. 이는 컨트롤러 간에 결합도를 높인다.
+
 ![](https://velog.velcdn.com/images/developer_noah/post/5a9f3960-93a2-43ab-bac7-d70920988d14/image.png)
 
+
+
 이벤트 버스 패턴은 결합도를 낮춘다.
+
 ![](https://velog.velcdn.com/images/developer_noah/post/521c7052-e9b0-4583-9666-70496fbe3d11/image.png)
 
 
