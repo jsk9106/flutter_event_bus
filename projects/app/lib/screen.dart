@@ -16,11 +16,24 @@ class AppScreen extends StatefulWidget {
 class _AppScreenState extends State<AppScreen> {
   int _currentIndex = 0;
   final EventBus _eventBus = Modular.get<EventBus>();
-  late final StreamSubscription _addRouteSubscription;
-  late final StreamSubscription _settingRouteSubscription;
+  StreamSubscription? _addRouteSubscription;
+  StreamSubscription? _settingRouteSubscription;
 
   @override
   void initState() {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      _subscribeEvents();
+    });
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _unSubscribeEvents();
+    super.dispose();
+  }
+
+  void _subscribeEvents() {
     _addRouteSubscription = _eventBus.on<AddRouteEvent>().listen((event) {
       Modular.to.pushNamed(event.route);
     });
@@ -28,14 +41,14 @@ class _AppScreenState extends State<AppScreen> {
     _settingRouteSubscription = _eventBus.on<SettingRouteEvent>().listen((event) {
       Modular.to.pushNamed(event.route);
     });
-    super.initState();
   }
 
-  @override
-  void dispose() {
-    _addRouteSubscription.cancel();
-    _settingRouteSubscription.cancel();
-    super.dispose();
+  void _unSubscribeEvents() {
+    _addRouteSubscription?.cancel();
+    _addRouteSubscription = null;
+
+    _settingRouteSubscription?.cancel();
+    _settingRouteSubscription = null;
   }
 
   @override
