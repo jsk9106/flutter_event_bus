@@ -1,0 +1,1 @@
+ /Users/noah/develop/projects/event_bus/projects/app/.dart_tool/flutter_build/fa785653b541c1258aeece7008321edd/native_assets.yaml: 

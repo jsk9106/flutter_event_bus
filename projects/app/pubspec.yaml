@@ -1,0 +1,24 @@
+name: event_bus_app
+description: A new Flutter projects.
+version: 1.0.0+1
+publish_to: none
+
+environment:
+  sdk: 3.6.0
+  flutter: 3.27.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  add:
+    path: ../../packages/add
+
+  setting:
+    path: ../../packages/setting
+
+  flutter_modular: 6.3.4
+  event_bus: 2.0.1
+
+flutter:
+  uses-material-design: true

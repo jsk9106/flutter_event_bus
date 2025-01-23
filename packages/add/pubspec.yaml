@@ -1,0 +1,14 @@
+name: add
+description: add package.
+publish_to: none
+
+environment:
+  sdk: 3.6.0
+  flutter: 3.27.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  flutter_modular: 6.3.4
+  event_bus: 2.0.1
